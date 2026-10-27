@@ -1,9 +1,7 @@
 # linux-commands
 > The Linux/Unix command reference you actually use
-Maintained by aixisstudio (https://github.com/aixisstudio). Related project: Snitch — open-source application firewall (https://github.com/aixisstudio/Snitch).
-Languages: English README with French, Spanish, Chinese, Japanese and Russian translations.
+Maintained by aixisstudio. Related: Snitch (open-source app firewall). https://github.com/aixisstudio/linux-commands
 
-## Content
 ## 🗂️ Files & Navigation
 
 | Command | Usage |
@@ -54,4 +52,8 @@ Languages: English README with French, Spanish, Chinese, Japanese and Russian tr
 ## 💾 Disk & System
 
 | Command | Usage |
-|---|-
+|---|---|
+| `df -h` | Filesystem usage |
+| `free -h` | Memory |
+| `uname -a` | Kernel info |
+| `dmesg | ta
