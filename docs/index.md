@@ -90,14 +90,59 @@ The Linux/Unix command reference you actually use
 | `bat file` | cat with wings |
 | `watch -n2 cmd` | Run every 2s |
 
+## 🧰 Disk & Files (extras)
 
-## ❓ Frequently Asked Questions
+| Command | What |
+|---|---|
+| `ncdu` | Interactive disk-usage browser |
+| `tree -L 2` | Directory tree |
+| `fdupes -r dir` | Find duplicates |
+| `stat file` | Full metadata |
 
-**What are the most useful Linux commands?**
+## 🔒 Permissions & Ownership (extras)
 
-ss -tulpn, rsync, rg, find, xargs, curl, jq, tcpdump and systemctl are the commands professionals use daily.
+| Command | What |
+|---|---|
+| `chmod g+s dir` | Sticky group inheritance |
+| `getfacl file` | Fine-grained ACLs |
+| `chattr +i file` | Make immutable (root even can't edit) |
+| `umask 022` | Default permission mask |
 
+## 🐛 Debugging & Observability
+
+| Command | What |
+|---|---|
+| `strace -c cmd` | Syscall summary — where time goes |
+| `ltrace cmd` | Library-call trace |
+| `perf top` | CPU hot spots live |
+| `journalctl -fu svc` | Follow service logs |
+| `dmesg -w` | Watch kernel messages |
+
+## 📦 Packages
+
+| Distro | Command |
+|---|---|
+| Debian/Ubuntu | `apt search`, `apt show`, `dpkg -L pkg` |
+| Fedora | `dnf list installed`, `dnf provides file` |
+| Arch | `pacman -Ss`, `pacman -Ql pkg` |
+| macOS | `brew info`, `brew services list` |
+
+## ⏰ Scheduling
+
+| Command | What |
+|---|---|
+| `crontab -e` | Edit cron jobs |
+| `at now +1 hour` | One-shot delayed task |
+| `systemd-run --on-calendar="Mon 09:00"` | systemd timer |
+| `sleep 300 && cmd &` | Poor-man's scheduler |
+
+## 🧵 Parallelism
+
+| Command | What |
+|---|---|
+| `cmd1 & cmd2 & wait` | Background + wait |
+| `xargs -P8 -n100 cmd` | Parallel batching |
+| `parallel -j+0 'cmd {}' ::: a b c` | GNU parallel |
 
 ---
-
-Maintained by [aixisstudio](https://github.com/aixisstudio) — author of [Snitch](https://github.com/aixisstudio/Snitch), the open-source application firewall. See also: [all resources](https://aixisstudio.github.io).
+Maintained by [aixisstudio](https://github.com/aixisstudio).
