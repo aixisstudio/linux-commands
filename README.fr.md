@@ -4,149 +4,147 @@
 
 La référence de commandes Linux/Unix que tu utilises vraiment
 
-_Le contenu détaillé (listes, liens, descriptions) est en anglais pour rester maintenable — les sections ci-dessous te guident._
+Fichiers & Navigation
 
-## 🗂️ Files & Navigation
-
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `ls -lah` | List with sizes & hidden files |
-| `find . -name "*.log" -mtime +30` | Files by name & age |
-| `fd pattern` | Modern fast `find` |
-| `du -sh */ | sort -rh` | Biggest directories first |
-| `rsync -avh --progress src/ dst/` | Faithful copy with progress |
-| `ln -s target link` | Symlink |
+Liste avec tailles et fichiers cachés
+Fichiers par nom et âge
+`fd pattern`: Un `find` rapide moderne
+D'abord, les plus gros répertoires
+`rsync -avh --progress src/ dst/`: Copie fidèle avec progrès
+Symlien
 
-## 📝 Text Processing
+Traitement de texte
 
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `grep -rn "pattern" .` | Recursive search |
-| `rg "pattern"` | ripgrep — instant, respects .gitignore |
-| `sed -i 's/old/new/g' file` | In-place replace |
-| `awk '{print $2}'` | Column extraction |
-| `cut -d: -f1 /etc/passwd` | Field split |
-| `sort | uniq -c | sort -rn` | Frequency count |
-| `jq '.key'` | JSON query |
-| `xargs -P8 -n1 cmd` | Parallel command per line |
+Recherche récursive
+`rg "pattern"`. — instant, respecte .gitignore.
+`sed -i 's/old/new/g' file`
+`awk '{print $2}'`
+`cut -d: -f1 /etc/passwd`
+Nombre de fréquences
+Demande JSON
+Commande parallèle par ligne
 
-## 🌐 Network
+Réseau
 
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `ss -tulpn` | Listening ports + processes |
-| `curl -sI url` | Headers only |
-| `curl -w '%{time_total}\n' -o /dev/null -s url` | Request timing |
-| `scp file user@host:/path` | Copy over SSH |
-| `ssh -L 8080:localhost:80 host` | Local port forward |
-| `tcpdump -i any -n host x` | Packet capture |
-| `mtr host` | Live traceroute |
+`ss -tulpn`: Ports d'écoute + processus
+En-têtes seulement
+`curl -w '%{time_total}\n' -o /dev/null -s url`=Délais de demande
+Copier sur SSH
+`ssh -L 8080:localhost:80 host`
+`tcpdump -i any -n host x`= Capture de paquets
+`mtr host`=Live traceroute=
 
-## ⚙️ Processes
+Processus
 
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `ps aux | grep proc` | Find a process |
-| `htop` / `btop` | Interactive monitor |
-| `kill -9 PID` | Force kill |
-| `lsof -p PID` | Files a process holds open |
-| `nohup cmd &` | Survive logout |
-| `systemctl status svc` | Service state |
+Rechercher un processus
+`htop` / `btop`
+`kill -9 PID`
+`lsof -p PID`. Fichiers un processus tient ouvert.
+`nohup cmd &`?Logout de survie
+État du service
 
-## 💾 Disk & System
+Système & disque
 
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `df -h` | Filesystem usage |
-| `free -h` | Memory |
-| `uname -a` | Kernel info |
-| `dmesg | tail` | Kernel messages |
-| `lsblk` | Block devices |
-| `mount | column -t` | Mounted filesystems |
+Utilisation du système de fichiers
+Mémoire
+`uname -a`
+Messages du noyau
+Dispositifs de bloc
+Systèmes de fichiers montés
 
-## 🔐 Permissions
+Autorisations
 
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `chmod 755 file` | rwx for owner, rx for others |
-| `chown user:group file` | Ownership |
-| `sudo !!` | Re-run last command as root |
-| `visudo` | Safe sudoers editing |
+`chmod 755 file`=Rwx pour le propriétaire, rx pour les autres
+Propriété
+Ré-exécuter la dernière commande comme root
+`visudo`
 
-## 📦 Archives
+Archives
 
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `tar -xzf f.tar.gz` | Extract |
-| `tar -czf out.tar.gz dir/` | Create |
-| `zip -r out.zip dir/` | Zip |
-| `7z x f.7z` | 7-Zip extract |
+Extrait de `tar -xzf f.tar.gz`
+Créer
+`zip -r out.zip dir/`
+Extrait de 7-Zip
 
-## ⚡ Productivity
+Productivité
 
-| Command | Usage |
+Commande Utilisation
 |---|---|
-| `Ctrl-R` | Fuzzy history search |
-| `!!` | Repeat last command |
-| `!$` | Last argument |
-| `alias ll='ls -lah'` | Aliases live in ~/.bashrc |
-| `tldr cmd` | Practical man pages |
-| `bat file` | cat with wings |
-| `watch -n2 cmd` | Run every 2s |
+Recherche d'historique flou
+Répète la dernière commande
+Dernier argument
+Les Aliases vivent dans ~/.bashrc
+`tldr cmd`) Pages d'homme pratiques
+`bat file`: chat avec ailes
+Exécuter tous les 2s
 
-## 🧰 Disk & Files (extras)
+Disque et fichiers (extras)
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `ncdu` | Interactive disk-usage browser |
-| `tree -L 2` | Directory tree |
-| `fdupes -r dir` | Find duplicates |
-| `stat file` | Full metadata |
+`ncdu`= Navigateur interactif d'utilisation du disque
+`tree -L 2`= Arbre de répertoire
+Rechercher des duplicatas
+`stat file`=Métadonnées complètes
 
-## 🔒 Permissions & Ownership (extras)
+Droits et propriété (extras)
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `chmod g+s dir` | Sticky group inheritance |
-| `getfacl file` | Fine-grained ACLs |
-| `chattr +i file` | Make immutable (root even can't edit) |
-| `umask 022` | Default permission mask |
+`chmod g+s dir`: L'héritage du groupe collant
+`getfacl file`=LAC à grains fins
+`chattr +i file` : rendre immuable (root ne peut même pas éditer)
+`umask 022`: Masque de permission par défaut
 
-## 🐛 Debugging & Observability
+Débogue et observabilité
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `strace -c cmd` | Syscall summary — where time goes |
-| `ltrace cmd` | Library-call trace |
-| `perf top` | CPU hot spots live |
-| `journalctl -fu svc` | Follow service logs |
-| `dmesg -w` | Watch kernel messages |
+Récapitulatif Syscall — où va le temps
+`ltrace cmd`=Ligne d'appel de la bibliothèque
+CUP points chauds live
+`journalctl -fu svc`.Suivez les journaux de service.
+Voir les messages du noyau
 
-## 📦 Packages
+Les paquets
 
-| Distro | Command |
+Commandement Distro
 |---|---|
-| Debian/Ubuntu | `apt search`, `apt show`, `dpkg -L pkg` |
-| Fedora | `dnf list installed`, `dnf provides file` |
-| Arch | `pacman -Ss`, `pacman -Ql pkg` |
-| macOS | `brew info`, `brew services list` |
+Debian/Ubuntu: `apt search`, `apt show`, `dpkg -L pkg`
+Fedora, `dnf list installed`, `dnf provides file`
+`pacman -Ss`, `pacman -Ql pkg`
+CdPH0X, CdPH1X
 
-## ⏰ Scheduling
+Calendrier
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `crontab -e` | Edit cron jobs |
-| `at now +1 hour` | One-shot delayed task |
-| `systemd-run --on-calendar="Mon 09:00"` | systemd timer |
-| `sleep 300 && cmd &` | Poor-man's scheduler |
+Éditer les emplois de cron
+Une seule prise de vue a retardé la tâche.
+`systemd-run --on-calendar="Mon 09:00"`
+`sleep 300 && cmd &`: L'horaire des pauvres
 
-## 🧵 Parallelism
+Parallélisme
 
-| Command | What |
+Qu'est-ce qui se passe ?
 |---|---|
-| `cmd1 & cmd2 & wait` | Background + wait |
-| `xargs -P8 -n100 cmd` | Parallel batching |
-| `parallel -j+0 'cmd {}' ::: a b c` | GNU parallel |
+Contexte + attente
+`xargs -P8 -n100 cmd`
+GNU parallèle
 
 ---
 ## Contribuer
