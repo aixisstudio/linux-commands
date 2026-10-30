@@ -4,149 +4,147 @@
 
 La referencia de comandos Linux que realmente usas
 
-_El contenido detallado (listas, enlaces, descripciones) está en inglés por mantenibilidad — las secciones siguientes te guían._
+Archivos de navegación
 
-## 🗂️ Files & Navigation
-
-| Command | Usage |
+Silencio .
 |---|---|
-| `ls -lah` | List with sizes & hidden files |
-| `find . -name "*.log" -mtime +30` | Files by name & age |
-| `fd pattern` | Modern fast `find` |
-| `du -sh */ | sort -rh` | Biggest directories first |
-| `rsync -avh --progress src/ dst/` | Faithful copy with progress |
-| `ln -s target link` | Symlink |
+Silencio `ls -lah` Silencio Lista con tamaños &amp; archivos ocultos Silencio
+Silencio `find . -name "*.log" -mtime +30` Silencio Archivos por nombre &gt; edad Silencio
+Silencio `fd pattern`
+Silencio `du -sh */ | sort -rh`
+Silencio `rsync -avh --progress src/ dst/`
+confidencialidad `ln -s target link`
 
 ## 📝 Text Processing
 
-| Command | Usage |
+Silencio .
 |---|---|
-| `grep -rn "pattern" .` | Recursive search |
-| `rg "pattern"` | ripgrep — instant, respects .gitignore |
-| `sed -i 's/old/new/g' file` | In-place replace |
-| `awk '{print $2}'` | Column extraction |
-| `cut -d: -f1 /etc/passwd` | Field split |
-| `sort | uniq -c | sort -rn` | Frequency count |
-| `jq '.key'` | JSON query |
-| `xargs -P8 -n1 cmd` | Parallel command per line |
+Silencio `grep -rn "pattern" .`
+Silencio `rg "pattern"` Silencio ondulante — instantáneo, respetos .gitignore TEN
+Silencio `sed -i 's/old/new/g' file`
+confidencialidad `awk '{print $2}'`
+Silencio `cut -d: -f1 /etc/passwd`
+Silencio `sort | uniq -c | sort -rn`
+Silencio `jq '.key'`
+Silencio `xargs -P8 -n1 cmd` Silencio Comando paralelo por línea
 
 ## 🌐 Network
 
-| Command | Usage |
+Silencio .
 |---|---|
-| `ss -tulpn` | Listening ports + processes |
-| `curl -sI url` | Headers only |
-| `curl -w '%{time_total}\n' -o /dev/null -s url` | Request timing |
-| `scp file user@host:/path` | Copy over SSH |
-| `ssh -L 8080:localhost:80 host` | Local port forward |
-| `tcpdump -i any -n host x` | Packet capture |
-| `mtr host` | Live traceroute |
+Silencio `ss -tulpn` Silencio Escuchando puertos + procesos
+Silencio `curl -sI url`
+Silencio `curl -w '%{time_total}\n' -o /dev/null -s url` Silencio
+Silencio `scp file user@host:/path`
+Silencio `ssh -L 8080:localhost:80 host` Silencio Puerto local adelante
+Silencio `tcpdump -i any -n host x`
+Silencio `mtr host`
 
-## ⚙️ Processes
+Procesos
 
-| Command | Usage |
+Silencio .
 |---|---|
-| `ps aux | grep proc` | Find a process |
-| `htop` / `btop` | Interactive monitor |
-| `kill -9 PID` | Force kill |
-| `lsof -p PID` | Files a process holds open |
-| `nohup cmd &` | Survive logout |
-| `systemctl status svc` | Service state |
+Silencio `ps aux | grep proc` Silencio Encontrar un proceso
+Silencio `htop` / `btop`
+Silencio `kill -9 PID`
+Silencio `lsof -p PID` Silencio Archivos un proceso mantiene abierto Silencio
+Silencio `nohup cmd &`
+Silencio `systemctl status svc`
 
-## 💾 Disk & System
+## 💾 Disk &amp; System
 
-| Command | Usage |
+Silencio .
 |---|---|
-| `df -h` | Filesystem usage |
-| `free -h` | Memory |
-| `uname -a` | Kernel info |
-| `dmesg | tail` | Kernel messages |
-| `lsblk` | Block devices |
-| `mount | column -t` | Mounted filesystems |
+Silencio `df -h`
+confidencialidad `free -h`
+Silencio `uname -a`
+Silencio `dmesg | tail`
+Silencio `lsblk` Silencio dispositivos Block
+Silencio `mount | column -t` Silencio Sistemas de archivos montados Silencio
 
-## 🔐 Permissions
+Permisos
 
-| Command | Usage |
+Silencio .
 |---|---|
-| `chmod 755 file` | rwx for owner, rx for others |
-| `chown user:group file` | Ownership |
-| `sudo !!` | Re-run last command as root |
-| `visudo` | Safe sudoers editing |
+Silencio para el propietario, rx para los demás
+Silencio `chown user:group file`
+Silencio `sudo !!`
+Silencio `visudo`
 
-## 📦 Archives
+Archivos
 
-| Command | Usage |
+Silencio .
 |---|---|
-| `tar -xzf f.tar.gz` | Extract |
-| `tar -czf out.tar.gz dir/` | Create |
-| `zip -r out.zip dir/` | Zip |
-| `7z x f.7z` | 7-Zip extract |
+Silencio `tar -xzf f.tar.gz`
+Silencio `tar -czf out.tar.gz dir/`
+confidencialidad `zip -r out.zip dir/`
+confidencialidad `7z x f.7z`
 
-## ⚡ Productivity
+♪ ♪ ♪ ♪♪ Productivity
 
-| Command | Usage |
+Silencio .
 |---|---|
-| `Ctrl-R` | Fuzzy history search |
-| `!!` | Repeat last command |
-| `!$` | Last argument |
-| `alias ll='ls -lah'` | Aliases live in ~/.bashrc |
-| `tldr cmd` | Practical man pages |
-| `bat file` | cat with wings |
-| `watch -n2 cmd` | Run every 2s |
+Silencio `Ctrl-R`
+Silencio `!!`
+Silencio `!$` Silencio Último argumento
+Silencio `alias ll='ls -lah'` Silencio Aliases viven en ~/.bashrc
+Silencio `tldr cmd`
+Silencio `bat file` Silencioso gato con alas
+Silencio `watch -n2 cmd`
 
-## 🧰 Disk & Files (extras)
+## 🧰 Disk &gt; Archivos (extras)
 
-| Command | What |
+← Mando Silencioso
 |---|---|
-| `ncdu` | Interactive disk-usage browser |
-| `tree -L 2` | Directory tree |
-| `fdupes -r dir` | Find duplicates |
-| `stat file` | Full metadata |
+Silencio `ncdu` Silencio Navegador interactivo de uso de disco
+Silencio `tree -L 2`
+Silencio `fdupes -r dir` Silencio Buscar duplicados
+Silencio `stat file` Silencio Metadatos completos
 
-## 🔒 Permissions & Ownership (extras)
+## Permisos &quot; Propiedad (extras)
 
-| Command | What |
+← Mando Silencioso
 |---|---|
-| `chmod g+s dir` | Sticky group inheritance |
-| `getfacl file` | Fine-grained ACLs |
-| `chattr +i file` | Make immutable (root even can't edit) |
-| `umask 022` | Default permission mask |
+Silencio `chmod g+s dir`
+Silencio `getfacl file`
+Silencio `chattr +i file` Silencio Hacer inmutable (root incluso no puede editar)
+Silencio `umask 022`
 
-## 🐛 Debugging & Observability
+## 🐛 Debugging &amp; Observability
 
-| Command | What |
+← Mando Silencioso
 |---|---|
-| `strace -c cmd` | Syscall summary — where time goes |
-| `ltrace cmd` | Library-call trace |
-| `perf top` | CPU hot spots live |
-| `journalctl -fu svc` | Follow service logs |
-| `dmesg -w` | Watch kernel messages |
+Silencio `strace -c cmd` Silencio Resumen de Syscall — donde el tiempo pasa
+Silencio `ltrace cmd` Silencio Biblioteca-call trace
+Silencio `perf top`
+Silencio `journalctl -fu svc` Silencio Seguir los registros de servicios
+Silencio `dmesg -w` Silencio Vea los mensajes del kernel
 
 ## 📦 Packages
 
-| Distro | Command |
+Silencio
 |---|---|
-| Debian/Ubuntu | `apt search`, `apt show`, `dpkg -L pkg` |
-| Fedora | `dnf list installed`, `dnf provides file` |
-| Arch | `pacman -Ss`, `pacman -Ql pkg` |
-| macOS | `brew info`, `brew services list` |
+TEN Debian/Ubuntu ANTE `apt search`, `apt show`, `dpkg -L pkg`
+← Fedora ← `dnf list installed`, `dnf provides file`
+← Arco Silencio `pacman -Ss`, `pacman -Ql pkg`
+TENIDO macOS TENIDO `brew info`, `brew services list`
 
-## ⏰ Scheduling
+## ¦
 
-| Command | What |
+← Mando Silencioso
 |---|---|
-| `crontab -e` | Edit cron jobs |
-| `at now +1 hour` | One-shot delayed task |
-| `systemd-run --on-calendar="Mon 09:00"` | systemd timer |
-| `sleep 300 && cmd &` | Poor-man's scheduler |
+Silencio `crontab -e`
+Silencio `at now +1 hour` Silencio Una misión retrasada
+Silencio `systemd-run --on-calendar="Mon 09:00"`
+Silencio `sleep 300 && cmd &`
 
-## 🧵 Parallelism
+Paralelismo
 
-| Command | What |
+← Mando Silencioso
 |---|---|
-| `cmd1 & cmd2 & wait` | Background + wait |
-| `xargs -P8 -n100 cmd` | Parallel batching |
-| `parallel -j+0 'cmd {}' ::: a b c` | GNU parallel |
+Silencio `cmd1 & cmd2 & wait`
+Silencio `xargs -P8 -n100 cmd`
+Silencio `parallel -j+0 'cmd {}' ::: a b c`
 
 ---
 ## Contribuir
