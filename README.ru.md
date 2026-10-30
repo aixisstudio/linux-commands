@@ -4,149 +4,147 @@
 
 Справочник команд Linux/Unix, которыми реально пользуются
 
-_Подробное содержимое (списки, ссылки, описания) ведётся на английском — разделы ниже помогут сориентироваться._
+##  ️ Файлы и навигация
 
-## 🗂️ Files & Navigation
-
-| Command | Usage |
+Командование, использование
 |---|---|
-| `ls -lah` | List with sizes & hidden files |
-| `find . -name "*.log" -mtime +30` | Files by name & age |
-| `fd pattern` | Modern fast `find` |
-| `du -sh */ | sort -rh` | Biggest directories first |
-| `rsync -avh --progress src/ dst/` | Faithful copy with progress |
-| `ln -s target link` | Symlink |
+`ls -lah` Список с размерами и скрытыми файлами
+| `find . -name "*.log" -mtime +30` | Файлы по имени и возрасту |
+`fd pattern` - современный быстрый `find`
+| `du -sh */ | sort -rh` | Самые большие каталоги
+| `rsync -avh --progress src/ dst/` | Верная копия с прогрессом |
+`ln -s target link` | Symlink |
 
-## 📝 Text Processing
+##  Text Текстовая обработка
 
-| Command | Usage |
+Командование, использование
 |---|---|
-| `grep -rn "pattern" .` | Recursive search |
-| `rg "pattern"` | ripgrep — instant, respects .gitignore |
-| `sed -i 's/old/new/g' file` | In-place replace |
-| `awk '{print $2}'` | Column extraction |
-| `cut -d: -f1 /etc/passwd` | Field split |
-| `sort | uniq -c | sort -rn` | Frequency count |
-| `jq '.key'` | JSON query |
-| `xargs -P8 -n1 cmd` | Parallel command per line |
+`grep -rn "pattern" .` - Рекурсивный поиск
+| `rg "pattern"` | ripgrep — моментально, уважает .gitignore |
+| `sed -i 's/old/new/g' file` | Вместо |
+| `awk '{print $2}'` | Экстракция колонки |
+| `cut -d: -f1 /etc/passwd` | Разделение поля
+| `sort | uniq -c | sort -rn` | Частотный счет |
+`jq '.key'` - запрос JSON
+| `xargs -P8 -n1 cmd` | Параллельная команда на строку
 
-## 🌐 Network
+###Сеть
 
-| Command | Usage |
+Командование, использование
 |---|---|
-| `ss -tulpn` | Listening ports + processes |
-| `curl -sI url` | Headers only |
-| `curl -w '%{time_total}\n' -o /dev/null -s url` | Request timing |
-| `scp file user@host:/path` | Copy over SSH |
-| `ssh -L 8080:localhost:80 host` | Local port forward |
-| `tcpdump -i any -n host x` | Packet capture |
-| `mtr host` | Live traceroute |
+| `ss -tulpn` | Прослушивающие порты + процессы |
+| `curl -sI url` | Только заголовки
+| `curl -w '%{time_total}\n' -o /dev/null -s url` | Время запроса |
+`scp file user@host:/path` Копировать SSH
+| `ssh -L 8080:localhost:80 host` | Локальный порт вперед
+| `tcpdump -i any -n host x` | Захват пакетов
+`mtr host` - Live traceroute
 
-## ⚙️ Processes
+##  ️ Процессы
 
-| Command | Usage |
+Командование, использование
 |---|---|
-| `ps aux | grep proc` | Find a process |
-| `htop` / `btop` | Interactive monitor |
-| `kill -9 PID` | Force kill |
-| `lsof -p PID` | Files a process holds open |
-| `nohup cmd &` | Survive logout |
-| `systemctl status svc` | Service state |
+`ps aux | grep proc` - Найти процесс
+| `htop` / `btop` | Интерактивный монитор
+`kill -9 PID` - Force Kill
+| `lsof -p PID` | Файлы процесс держит открытым |
+| `nohup cmd &` | Выживание
+| `systemctl status svc` | Состояние обслуживания
 
-## 💾 Disk & System
+##Диск и система
 
-| Command | Usage |
+Командование, использование
 |---|---|
-| `df -h` | Filesystem usage |
-| `free -h` | Memory |
-| `uname -a` | Kernel info |
-| `dmesg | tail` | Kernel messages |
-| `lsblk` | Block devices |
-| `mount | column -t` | Mounted filesystems |
+| `df -h` | Использование файловой системы
+`free -h` — память
+| `uname -a` | Информация о ядре
+| `dmesg | tail` | Сообщения ядра
+| `lsblk` | Блок-устройства |
+| `mount | column -t` | Установленные файловые системы |
 
-## 🔐 Permissions
+##   Разрешения
 
-| Command | Usage |
+Командование, использование
 |---|---|
-| `chmod 755 file` | rwx for owner, rx for others |
-| `chown user:group file` | Ownership |
-| `sudo !!` | Re-run last command as root |
-| `visudo` | Safe sudoers editing |
+| `chmod 755 file` | rwx для владельца, rx для других |
+`chown user:group file` — собственность
+| `sudo !!` | Перезапустить последнюю команду как root |
+`visudo` - Безопасные убийцы
 
-## 📦 Archives
+## s Архивы
 
-| Command | Usage |
+Командование, использование
 |---|---|
-| `tar -xzf f.tar.gz` | Extract |
-| `tar -czf out.tar.gz dir/` | Create |
-| `zip -r out.zip dir/` | Zip |
-| `7z x f.7z` | 7-Zip extract |
+| `tar -xzf f.tar.gz` | Экстракт
+`tar -czf out.tar.gz dir/` Создать
+`zip -r out.zip dir/` | Zip
+| `7z x f.7z` | 7-Zip экстракт |
 
-## ⚡ Productivity
+##Производительность
 
-| Command | Usage |
+Командование, использование
 |---|---|
-| `Ctrl-R` | Fuzzy history search |
-| `!!` | Repeat last command |
-| `!$` | Last argument |
-| `alias ll='ls -lah'` | Aliases live in ~/.bashrc |
-| `tldr cmd` | Practical man pages |
-| `bat file` | cat with wings |
-| `watch -n2 cmd` | Run every 2s |
+| `Ctrl-R` | Нечеткая история поиска
+| `!!` | Повторить последнюю команду
+`!$` - последний аргумент
+| `alias ll='ls -lah'` | Алиасы живут в ~/.bashrc |
+| `tldr cmd` | Практические страницы человека
+Кот с крыльями / Cat with Wings
+`watch -n2 cmd` - Запуск каждые 2
 
-## 🧰 Disk & Files (extras)
+## ) Диск и файлы (дополнительные)
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `ncdu` | Interactive disk-usage browser |
-| `tree -L 2` | Directory tree |
-| `fdupes -r dir` | Find duplicates |
-| `stat file` | Full metadata |
+| `ncdu` | Браузер интерактивного использования дисков |
+| `tree -L 2` | Дерево директорий |
+`fdupes -r dir` Найти дубликаты
+`stat file` - полные метаданные
 
-## 🔒 Permissions & Ownership (extras)
+## ) Разрешения и право собственности (дополнительные)
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `chmod g+s dir` | Sticky group inheritance |
-| `getfacl file` | Fine-grained ACLs |
-| `chattr +i file` | Make immutable (root even can't edit) |
-| `umask 022` | Default permission mask |
+`chmod g+s dir` — наследование группы Sticky
+| `getfacl file` | Тонкие зернистые ACLs |
+| `chattr +i file` | Сделайте неизменяемым (корень даже не может редактировать) |
+| `umask 022` | Маска разрешения по умолчанию
 
-## 🐛 Debugging & Observability
+##Отладка и наблюдаемость
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `strace -c cmd` | Syscall summary — where time goes |
-| `ltrace cmd` | Library-call trace |
+| `strace -c cmd` | Syscall summary — Where Time Goes |
+| `ltrace cmd` | След библиотечного звонка |
 | `perf top` | CPU hot spots live |
-| `journalctl -fu svc` | Follow service logs |
-| `dmesg -w` | Watch kernel messages |
+| `journalctl -fu svc` | Следите за журналами обслуживания |
+| `dmesg -w` | Сообщения ядра
 
-## 📦 Packages
+## s Пакеты
 
-| Distro | Command |
+Дистрибутивы / Command
 |---|---|
-| Debian/Ubuntu | `apt search`, `apt show`, `dpkg -L pkg` |
-| Fedora | `dnf list installed`, `dnf provides file` |
-| Arch | `pacman -Ss`, `pacman -Ql pkg` |
-| macOS | `brew info`, `brew services list` |
+Debian/Ubuntu | `apt search`, `apt show`, `dpkg -L pkg`
+Федора, `dnf list installed`, `dnf provides file`
+Обсуждение `pacman -Ss`, `pacman -Ql pkg`
+macOS | `brew info`, `brew services list`
 
-## ⏰ Scheduling
+## ed Расписание
 
-| Command | What |
+Командир, что такое
 |---|---|
 | `crontab -e` | Edit cron jobs |
-| `at now +1 hour` | One-shot delayed task |
-| `systemd-run --on-calendar="Mon 09:00"` | systemd timer |
-| `sleep 300 && cmd &` | Poor-man's scheduler |
+| `at now +1 hour` | Задержка с одним выстрелом |
+`systemd-run --on-calendar="Mon 09:00"` - системный таймер
+[Перенаправлено с The Poor-man's scheduler]
 
-## 🧵 Parallelism
+##Параллелизм
 
-| Command | What |
+Командир, что такое
 |---|---|
-| `cmd1 & cmd2 & wait` | Background + wait |
-| `xargs -P8 -n100 cmd` | Parallel batching |
-| `parallel -j+0 'cmd {}' ::: a b c` | GNU parallel |
+| `cmd1 & cmd2 & wait` | Справочная информация + ожидание
+| `xargs -P8 -n100 cmd` | Параллельная партия |
+`parallel -j+0 'cmd {}' ::: a b c` - параллель GNU
 
 ---
 ## Участие
