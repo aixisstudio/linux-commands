@@ -4,149 +4,147 @@
 
 本当に使う Linux/Unix コマンドリファレンス
 
-_詳細なコンテンツ（リスト・リンク・説明）は保守のため英語です。以下のセクションがガイドになります。_
+## ライブファイルとナビゲーション
 
-## 🗂️ Files & Navigation
-
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `ls -lah` | List with sizes & hidden files |
-| `find . -name "*.log" -mtime +30` | Files by name & age |
-| `fd pattern` | Modern fast `find` |
-| `du -sh */ | sort -rh` | Biggest directories first |
-| `rsync -avh --progress src/ dst/` | Faithful copy with progress |
-| `ln -s target link` | Symlink |
+| `ls -lah` | サイズ・非表示ファイル一覧 |
+| `find . -name "*.log" -mtime +30` | 商品名・年齢別 |
+| `fd pattern` | モダンファースト `find` |
+| `du -sh */ | sort -rh` | ビッグベスト・ディレクター |
+| `rsync -avh --progress src/ dst/` | 進行中のコピー |
+| `ln -s target link` | シンリンク |
 
-## 📝 Text Processing
+## テキスト処理
 
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `grep -rn "pattern" .` | Recursive search |
-| `rg "pattern"` | ripgrep — instant, respects .gitignore |
-| `sed -i 's/old/new/g' file` | In-place replace |
-| `awk '{print $2}'` | Column extraction |
-| `cut -d: -f1 /etc/passwd` | Field split |
-| `sort | uniq -c | sort -rn` | Frequency count |
-| `jq '.key'` | JSON query |
-| `xargs -P8 -n1 cmd` | Parallel command per line |
+| `grep -rn "pattern" .` | 再帰検索 |
+| `rg "pattern"` | ripgrep — 即刻、敬意 |
+| `sed -i 's/old/new/g' file` | 交換場所 |
+| `awk '{print $2}'` | コラム抽出 |
+| `cut -d: -f1 /etc/passwd` | フィールドスプリット |
+| `sort | uniq -c | sort -rn` | 周波数カウント |
+| `jq '.key'` | JSON クエリ |
+| `xargs -P8 -n1 cmd` | 並列操作 |
 
-## 🌐 Network
+## バックアップネットワーク
 
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `ss -tulpn` | Listening ports + processes |
-| `curl -sI url` | Headers only |
-| `curl -w '%{time_total}\n' -o /dev/null -s url` | Request timing |
-| `scp file user@host:/path` | Copy over SSH |
-| `ssh -L 8080:localhost:80 host` | Local port forward |
-| `tcpdump -i any -n host x` | Packet capture |
-| `mtr host` | Live traceroute |
+| `ss -tulpn` | リスニングポート + プロセス |
+| `curl -sI url` | ヘッダーのみ |
+| `curl -w '%{time_total}\n' -o /dev/null -s url` | リクエストのタイミング |
+| `scp file user@host:/path` | SSHをコピー |
+| `ssh -L 8080:localhost:80 host` | ローカルポート転送 |
+| `tcpdump -i any -n host x` | パケットキャプチャ |
+| `mtr host` | ライブトレースルート |
 
-## ⚙️ Processes
+## ⚙️ プロセス
 
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `ps aux | grep proc` | Find a process |
-| `htop` / `btop` | Interactive monitor |
-| `kill -9 PID` | Force kill |
-| `lsof -p PID` | Files a process holds open |
-| `nohup cmd &` | Survive logout |
-| `systemctl status svc` | Service state |
+| `ps aux | grep proc` | プロセスを探す |
+| `htop` / `btop` | インタラクティブモニター |
+| `kill -9 PID` | フォースキル |
+| `lsof -p PID` | プロセスが開いているファイル |
+| `nohup cmd &` | 総合ログアウト |
+| `systemctl status svc` | サービス状態 |
 
-## 💾 Disk & System
+## 💾ディスク&システム
 
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `df -h` | Filesystem usage |
-| `free -h` | Memory |
-| `uname -a` | Kernel info |
-| `dmesg | tail` | Kernel messages |
-| `lsblk` | Block devices |
-| `mount | column -t` | Mounted filesystems |
+| `df -h` | ファイルシステム利用 |
+| `free -h` | メモリー |
+| `uname -a` | カーネル情報 |
+| `dmesg | tail` | カーネルメッセージ |
+| `lsblk` | ブロックデバイス |
+| `mount | column -t` | マウントファイルシステム |
 
-## 🔐 Permissions
+## 🔐 許可
 
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `chmod 755 file` | rwx for owner, rx for others |
-| `chown user:group file` | Ownership |
-| `sudo !!` | Re-run last command as root |
-| `visudo` | Safe sudoers editing |
+| `chmod 755 file` | rwx オーナー様・ rx 様向け | `chmod 755 file` | `chmod 755 file` | rwx オーナー様・ rx 様向け |
+| `chown user:group file` | オーナーシップ |
+| `sudo !!` | 最後のコマンドを root で再実行 |
+| `visudo` | 安全疑惑編集 |
 
-## 📦 Archives
+## 📦 アーカイブ
 
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `tar -xzf f.tar.gz` | Extract |
-| `tar -czf out.tar.gz dir/` | Create |
-| `zip -r out.zip dir/` | Zip |
-| `7z x f.7z` | 7-Zip extract |
+| `tar -xzf f.tar.gz` | エキストラ |
+| `tar -czf out.tar.gz dir/` | クリエイト | クリエイト |
+| `zip -r out.zip dir/` | ジップ |
+| `7z x f.7z` | 7-Zip エキスプレス |
 
-## ⚡ Productivity
+## ⚡ 生産性
 
-| Command | Usage |
+| コマンド | 使い方 |
 |---|---|
-| `Ctrl-R` | Fuzzy history search |
-| `!!` | Repeat last command |
-| `!$` | Last argument |
-| `alias ll='ls -lah'` | Aliases live in ~/.bashrc |
-| `tldr cmd` | Practical man pages |
-| `bat file` | cat with wings |
-| `watch -n2 cmd` | Run every 2s |
+| `Ctrl-R` | ファジー歴史検索 |
+| `!!` | 最後のコマンドを繰り返す |
+| `!$` | 最後の引数 |
+| `alias ll='ls -lah'` | エイリアス ライブ |
+| `tldr cmd` | 実用マンページ |
+| `bat file` | 羽根付き猫 |
+| `watch -n2 cmd` | 全て走る |
 
-## 🧰 Disk & Files (extras)
+## ディスク & ファイル (extras)
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `ncdu` | Interactive disk-usage browser |
-| `tree -L 2` | Directory tree |
-| `fdupes -r dir` | Find duplicates |
-| `stat file` | Full metadata |
+| `ncdu` | インタラクティブディスク使用ブラウザ |
+| `tree -L 2` | ディレクトリツリー |
+| `fdupes -r dir` | 重複の検索 |
+| `stat file` | フルメタデータ |
 
-## 🔒 Permissions & Ownership (extras)
+## 投稿許可と所有権 (extras)
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `chmod g+s dir` | Sticky group inheritance |
-| `getfacl file` | Fine-grained ACLs |
-| `chattr +i file` | Make immutable (root even can't edit) |
-| `umask 022` | Default permission mask |
+| `chmod g+s dir` | スティッキーグループ継承 |
+| `getfacl file` | ファイングラインド ACL |
+| `chattr +i file` | 不変(rootも編集できません) |
+| `umask 022` | 既定の許可マスク |
 
-## 🐛 Debugging & Observability
+## 🐛 分解と防腐性
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `strace -c cmd` | Syscall summary — where time goes |
-| `ltrace cmd` | Library-call trace |
-| `perf top` | CPU hot spots live |
-| `journalctl -fu svc` | Follow service logs |
-| `dmesg -w` | Watch kernel messages |
+| `strace -c cmd` | シコールサマリー | 所要時間 |
+| `ltrace cmd` | ライブラリーコールトレース |
+| `perf top` | CPUホットスポットライブ |
+| `journalctl -fu svc` | サービスログのフォロー |
+| `dmesg -w` | カーネルメッセージを見る |
 
-## 📦 Packages
+## パッケージ
 
-| Distro | Command |
+| コマンド |
 |---|---|
 | Debian/Ubuntu | `apt search`, `apt show`, `dpkg -L pkg` |
-| Fedora | `dnf list installed`, `dnf provides file` |
-| Arch | `pacman -Ss`, `pacman -Ql pkg` |
-| macOS | `brew info`, `brew services list` |
+| フェドラ | `dnf list installed` | `dnf provides file` |
+| アーカイブ | `pacman -Ss` | `pacman -Ql pkg` |
+| macOS | `brew info`, `brew services list` | macOS | `brew info`, `brew services list` | macOS | `brew info`, `brew services list` | macOS | macOS | `brew info`, `brew services list`, `brew services list` | macOS | macOS | macOS | `brew info`, `brew services list` | macOS | macOS | macOS | macOS | `brew info`, `brew info`, `brew services list`, `brew services list` | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS | macOS |
 
-## ⏰ Scheduling
+## スケジューリング
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `crontab -e` | Edit cron jobs |
-| `at now +1 hour` | One-shot delayed task |
-| `systemd-run --on-calendar="Mon 09:00"` | systemd timer |
-| `sleep 300 && cmd &` | Poor-man's scheduler |
+| `crontab -e` | cronジョブの編集 |
+| `at now +1 hour` | ワンショット遅延タスク |
+| `systemd-run --on-calendar="Mon 09:00"` | システムタイマー |
+| `sleep 300 && cmd &` | ポアマンのスケジューラ |
 
-## 🧵 Parallelism
+## 🧵 パレルリズム
 
-| Command | What |
+| コマンド | 使い方 |
 |---|---|
-| `cmd1 & cmd2 & wait` | Background + wait |
-| `xargs -P8 -n100 cmd` | Parallel batching |
-| `parallel -j+0 'cmd {}' ::: a b c` | GNU parallel |
+| `cmd1 & cmd2 & wait` | 背景+お待ち |
+| `xargs -P8 -n100 cmd` | 並列バッチ |
+| `parallel -j+0 'cmd {}' ::: a b c` | GNU パラレル |
 
 ---
 ## 貢献
